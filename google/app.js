@@ -14,6 +14,7 @@ app.get("/", (req, res, next) => {
 });
 
 app.get("/login", (req, res, next) => {
+  // 클라이언트 사이드에서 해도 될 듯
   res.redirect(
     `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}&response_type=code&scope=email profile`
   );
